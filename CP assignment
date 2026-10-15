@@ -1,0 +1,25 @@
+tiles = int(input("Enter the number of tiles: "))
+total = 0
+below = 0
+above = 0
+in_range = 0
+def classify(value):
+    global below, above, in_range, total
+    if value < 98:
+        print("Below range")
+        below += 1
+    elif value > 102:
+        print("Above range")
+        above += 1
+    else:
+        print("In range")
+        in_range += 1
+    total += value
+for i in range(tiles):
+    value = int(input("Enter the tile's width: "))
+    classify(value)
+print(f"Total width: {total}")
+print(f"Average width: {total / tiles}")
+print(f"Below range: {below}")
+print(f"In range: {in_range}")
+print(f"Above average: {above}")
